@@ -9,7 +9,8 @@ HEX=$(notdir $(CURDIR)).hex
 
 # Tools
 GCC= arm-none-eabi-gcc
-CC = $(GCC) -mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -DSTM32F401xE
+#CC = $(GCC) -mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -DSTM32F401xE
+CC = $(GCC) -mthumb -mcpu=cortex-m4 -mfloat-abi=soft -DSTM32F401xE -Os -flto
 LD = $(CC) -TSTM32_f401re.ld 
 CP = arm-none-eabi-objcopy
 SZ = arm-none-eabi-size
